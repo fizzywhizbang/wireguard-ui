@@ -4,13 +4,14 @@ import (
 	"embed"
 	"flag"
 	"fmt"
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/gommon/log"
-	"github.com/fizzywhizbang/wireguard-ui/store"
 	"io/fs"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/fizzywhizbang/wireguard-ui/store"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/gommon/log"
 
 	"github.com/fizzywhizbang/wireguard-ui/emailer"
 	"github.com/fizzywhizbang/wireguard-ui/handler"
@@ -59,7 +60,7 @@ var embeddedTemplates embed.FS
 
 // embed the "assets" directory
 //
-//go:embed assets/*
+// go:embed assets/*
 var embeddedAssets embed.FS
 
 func init() {
