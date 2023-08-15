@@ -223,11 +223,11 @@ go build -o wireguard-ui
 ```
 
 Once in the interface set ypur Post Up and Post Down scripts (example below)  
-Post Up:  
+Post Up:(replace eth0 with your ethernet interface)  
 ```sh
 iptables -A FORWARD -i eth0 -o wg0 -j ACCEPT; iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE
 ```
-Post Down
+Post Down: (replace eth0 with your ethernet interface)
 ```sh
 iptables -D FORWARD -i eth0 -o wg0 -j ACCEPT; iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE; ip6tables -A FORWARD -i wg0 -j ACCEPT; ip6tables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE
 
